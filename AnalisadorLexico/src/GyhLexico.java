@@ -7,6 +7,8 @@ public class GyhLexico {
 		ldat = new Leitor(arquivo);
 	}
 	
+
+	
 	public Token proximoToken() {
 		Token proximo = null;
 		
@@ -101,7 +103,9 @@ public class GyhLexico {
 			return proximo;
 		}
 		
-		System.err.println("Erro Léxico!");
+		
+		System.err.println("Erro Léxico!" ); //imprimir linha interia que deu erro
+		
 		System.err.println(ldat.toString());
 		return null;
 	}//proximo token
@@ -245,11 +249,17 @@ public class GyhLexico {
 	
 	private Token variaveis() {
 		int estado = 1;
+		int aux = 0;
+		
 		while(true) {
 			char c = (char) ldat.lerProximoCaractere();
+			aux++;
+			
 			if(estado == 1) {
-				if(Character.isLetter(c)) {
-					estado = 2;
+				if(Character.isLetter(c) && aux == 1 && Character.isUpperCase(c) ) { 
+					return null;
+				}else if(Character.isLetter(c)){
+					estado = 2;					
 				}else {
 					return null;
 				}
