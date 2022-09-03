@@ -1,2 +1,2 @@
-<h1><b>Projeto Compilador para a Linguagem GYH - Compiladores
-##
+<h3><b>Projeto Compilador para a Linguagem GYH - Compiladores
+#
